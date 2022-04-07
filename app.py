@@ -146,7 +146,7 @@ def investors_dashbaord(user_key_id,alert):
     another_wis.execute("SELECT email FROM email_dert WHERE id =?", (1, ))
     result = another_wis.fetchone()[0]
     #ssme_email = "merit@gmail.com"
-    ssme_email = "merit@gmail.com"
+    ssme_email = result
     if request.method == "POST":
         amount_transfer = int(request.form['amount_fund'])
         wis.execute("SELECT balance FROM sign_up_table_investors WHERE investor_id=?", (user_key_id, ))
